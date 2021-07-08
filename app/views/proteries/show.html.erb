@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Property Detail</h1>
+
+<p>
+  <strong>Property:</strong>
+  <%= @protery.property %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @protery.rent %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @protery.address %>
+</p>
+
+<p>
+  <strong>Building age:</strong>
+  <%= @protery.building_age %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @protery.remarks %>
+</p>
+
+<hr>
+
+
+<% @protery.railways.each do |railway| %>
+  <p>
+    <strong>Name of railway:</strong>
+    <%= railway.name %>
+  </p>
+
+  <p>
+    <strong>Station name:</strong>
+    <%= railway.station_name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= railway.time %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_protery_path(@protery) %> |
+<%= link_to 'Back', proteries_path %>

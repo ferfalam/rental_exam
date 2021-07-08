@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Protery List</h1>
+<br>
+
+<%= link_to 'New Protery', new_protery_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Rent</th>
+      <th>Address</th>
+      <th>Building age</th>
+      <th>Remark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proteries.each do |protery| %>
+      <tr>
+        <td><%= protery.property %></td>
+        <td><%= protery.rent %></td>
+        <td><%= protery.address %></td>
+        <td><%= protery.building_age %></td>
+        <td><%= protery.remarks %></td>
+        <td><%= link_to 'Show', protery %></td>
+        <td><%= link_to 'Edit', edit_protery_path(protery) %></td>
+        <td><%= link_to 'Destroy', protery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
